@@ -14,11 +14,22 @@ const tasks = (state = instialState, action) => {
       return { ...state.name, task };
     case "DELETE_TASK":
       const { index } = payload;
-      const newName = state.name.filter((item,i)=>{
-          return i!=index;
-      })
+      const newName = state.name.filter((item, i) => {
+        return i != index;
+      });
 
-      return {name:newName};
+      return { name: newName };
+    case "UPDATE_TASK":
+      const { newTask,indx } = payload;
+      const newname = state.name.map((item, i) => {
+          if(i===indx){
+              console.log("newTask",newTask);
+              return state;
+          }
+        return state;
+      });
+
+      return { name: newName };
     default:
       return state;
   }
@@ -41,8 +52,8 @@ export const addTask = (data) => {
 };
 
 export const deleteTask = (data) => {
-    return {
-      type: "DELETE_TASK",
-      payload: data,
-    };
+  return {
+    type: "DELETE_TASK",
+    payload: data,
   };
+};

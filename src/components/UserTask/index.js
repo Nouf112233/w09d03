@@ -71,6 +71,20 @@ function UserTask() {
       }
   };
 
+  const updatetask = async(_id, i) => {
+    if (taskName.length > 0) {
+      const newTask=await axios.put(
+        `${process.env.REACT_APP_BASIC_URL}/task`,
+        { taskId: _id, taskName: taskName },
+        { headers: { Authorization: `Bearer ${state.signIn.token}` } }
+      );
+      console.log("newTask",newTask.data);
+    }
+   
+    setTaskname("");
+
+  };
+
   const out = () => {
     dispatch(logout({ role: "", token: "" }));
     // dispatch(add({name:[]}));
@@ -101,9 +115,11 @@ function UserTask() {
             <input
               type="text"
               //   value={taskName}
-             
+              onChange={(e) => {
+                setTaskname(e.target.value);
+              }}
             />
-            <button >update</button>
+            <button onClick={() => updatetask(item._id, i)} >update</button>
           </div>
         );
       })}
