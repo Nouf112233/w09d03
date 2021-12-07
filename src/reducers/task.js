@@ -7,11 +7,11 @@ const tasks = (state = instialState, action) => {
     case "GET_ALL_TASKS":
       const { name } = payload;
       return { name };
-    case "UPDATE_TASK":
+    case "ADD_TASK":
       const { task } = payload;
-      console.log({...name,task})
+    //   console.log("data",{...state.name,task})
 
-      return  state;
+      return  {...state.name,task};
     default:
       return state;
   }
@@ -25,3 +25,10 @@ export const getTasks = (data) => {
     payload: data,
   };
 };
+
+export const addTask = (data) => {
+    return {
+      type: "ADD_TASK",
+      payload: data,
+    };
+  };
