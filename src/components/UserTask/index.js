@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { getTasks,addTask } from "./../../reducers/task";
+import { getTasks,addTask,deleteTask } from "./../../reducers/task";
 import { logout } from "./../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -53,6 +53,24 @@ function UserTask() {
     
   };
 
+  const deletetask = async (taskId, i) => {
+
+    try {
+        await axios.delete(`${process.env.REACT_APP_BASIC_URL}/task/${taskId}`, {
+          headers: {
+            Authorization: `Bearer ${state.signIn.token}`,
+          },
+        });
+   
+        const data = {
+            index: i,
+          };
+          dispatch(deleteTask(data));
+      } catch (error) {
+        console.log(error);
+      }
+  };
+
   const out = () => {
     dispatch(logout({ role: "", token: "" }));
     // dispatch(add({name:[]}));
@@ -79,7 +97,7 @@ function UserTask() {
         return (
           <div key={item._id}>
             <h1>{item.name}</h1>
-            <button >delete</button>
+            <button onClick={() => deletetask(item._id, i)}>delete</button>
             <input
               type="text"
               //   value={taskName}

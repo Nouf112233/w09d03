@@ -9,9 +9,16 @@ const tasks = (state = instialState, action) => {
       return { name };
     case "ADD_TASK":
       const { task } = payload;
-    //   console.log("data",{...state.name,task})
+      //   console.log("data",{...state.name,task})
 
-      return  {...state.name,task};
+      return { ...state.name, task };
+    case "DELETE_TASK":
+      const { index } = payload;
+      const newName = state.name.filter((item,i)=>{
+          return i!=index;
+      })
+
+      return {name:newName};
     default:
       return state;
   }
@@ -27,8 +34,15 @@ export const getTasks = (data) => {
 };
 
 export const addTask = (data) => {
+  return {
+    type: "ADD_TASK",
+    payload: data,
+  };
+};
+
+export const deleteTask = (data) => {
     return {
-      type: "ADD_TASK",
+      type: "DELETE_TASK",
       payload: data,
     };
   };
