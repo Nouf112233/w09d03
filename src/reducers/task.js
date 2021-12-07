@@ -25,7 +25,7 @@ const tasks = (state = instialState, action) => {
       const newname = state.name.map((item, i) => {
           if(i===indx){
               
-              return newTask.data;
+              return newTask;
           }else{
             return item;
           }

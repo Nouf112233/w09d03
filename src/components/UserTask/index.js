@@ -79,13 +79,14 @@ function UserTask() {
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
       const data = {
-        newTask:newTask,
+        newTask:newTask.data,
         indx:i
       };
       dispatch(updateTask(data));
     }
    
     setTaskname("");
+    
 
   };
 
@@ -110,7 +111,7 @@ function UserTask() {
       />
       <button  onClick={createTask}>add task</button>
 
-      {state.tasks.name.map((item, i) => {
+      {state.tasks.name.length&&state.tasks.name.map((item, i) => {
         // console.log("item", item);
         return (
           <div key={item._id}>
