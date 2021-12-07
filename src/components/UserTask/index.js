@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { getTasks,addTask,deleteTask } from "./../../reducers/task";
+import { getTasks,addTask,deleteTask,updateTask } from "./../../reducers/task";
 import { logout } from "./../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -78,7 +78,11 @@ function UserTask() {
         { taskId: _id, taskName: taskName },
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
-      console.log("newTask",newTask.data);
+      const data = {
+        newTask:newTask,
+        indx:i
+      };
+      dispatch(updateTask(data));
     }
    
     setTaskname("");
