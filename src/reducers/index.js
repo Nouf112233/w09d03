@@ -1,11 +1,13 @@
-import React from 'react'
+import { createStore,combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import signIn  from "./login";
+import tasks from "./task";
 
-function Account() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const reducers=combineReducers({signIn,tasks});
 
-export default Account
+
+const store=()=>{
+    return createStore(reducers,composeWithDevTools());
+};
+
+export default store();
