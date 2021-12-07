@@ -24,8 +24,8 @@ function App() {
     {(state.signIn.token && state.signIn.role==="admin") && <AdminTask /> }
    
     <Routes>
-        {/* <Route exact path="/tasks" element={<Tasks />} />
-        <Route exact path="/task" element={<Task />} /> */}
+        {/* <Route exact path="/tasks" element={<Tasks />} /> */}
+        <Route exact path="/account" element={<Account />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/signin" element={<SignIn />} />
       </Routes>

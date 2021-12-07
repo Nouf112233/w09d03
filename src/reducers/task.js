@@ -11,7 +11,7 @@ const tasks = (state = instialState, action) => {
       const { task } = payload;
       console.log({...name,task})
 
-      return { name };
+      return  state;
     default:
       return state;
   }
@@ -19,9 +19,9 @@ const tasks = (state = instialState, action) => {
 
 export default tasks;
 
-export const add = (data) => {
+export const getTasks = (data) => {
   return {
-    type: "ADD",
+    type: "GET_ALL_TASKS",
     payload: data,
   };
 };
