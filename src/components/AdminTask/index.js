@@ -7,7 +7,7 @@ import {
 import { getAllUsers, getUserTasks } from "./../../reducers/user";
 import { logout } from "./../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function AdminTask() {
   const dispatch = useDispatch();
