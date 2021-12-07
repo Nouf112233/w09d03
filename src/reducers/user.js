@@ -12,7 +12,7 @@ const users = (state = instialState, action) => {
       const { userId } = payload;
       //   console.log("data",{...state.name,task})
 
-      return { ...state, userId };
+      return { ...state, userId:userId };
     default:
       return state;
   }
