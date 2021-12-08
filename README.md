@@ -42,8 +42,10 @@ This is a platform on which I used React ,Redux, Authentication , and Authorizat
 
 # Reducers
 
-  . login => logIn , logOut         
+  . login => logIn , logOut    
+       
   . task => getTasks , addTask , deleteTask , updateTask. 
+
   . user => getAllUsers , getUserTasks.
 
 # Install Backage
