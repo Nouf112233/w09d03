@@ -35,22 +35,31 @@ This is a platform on which I used React ,Redux, Authentication , and Authorizat
 # Components
 
   . Account => have to link signIn , register.
-
   . AminTask
-
   . Register
-
   . SignIn
-
   . UserTask
 
 # Reducers
 
-  . login => logIn , logOut
-             
+  . login => logIn , logOut         
   . task => getTasks , addTask , deleteTask , updateTask. 
-
   . user => getAllUsers , getUserTasks.
+
+# Install Backage
+
+    . axios
+    . react.
+    . react-dom.
+    . react-dotenv. 
+    . react-redux. 
+    . react-router-dom. 
+    . react-scripts. 
+    . redux. 
+    . redux-devtools-extension. 
+    . web-vitals. 
+
+
 
 
   
