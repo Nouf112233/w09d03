@@ -35,10 +35,14 @@ This is a platform on which I used React ,Redux, Authentication , and Authorizat
 # Components
 
   . Account => have to link signIn , register.
-  . AminTask
-  . Register
-  . SignIn
-  . UserTask
+
+  . AminTask.
+
+  . Register.
+
+  . SignIn.
+
+  . UserTask.
 
 # Reducers
 
